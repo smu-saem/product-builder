@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>디지털 서비스 창업</title>
+<meta name="description" content="아이디어를 한 학기 안에 작동하는 디지털 서비스로 만드는 교과목. 창업 서비스 기획과 바이브 코딩을 한 번에.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="styles.css">
+<script>
+// 저장된 테마를 렌더 전에 적용해 깜빡임을 막는다 (파일 직접 열기 시 storage 접근 실패 대비)
+(function(){
+  try{
+    var saved = localStorage.getItem('theme');
+    if(!saved) saved = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    if(saved === 'light') document.documentElement.setAttribute('data-theme','light');
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span><span class="label">디지털 서비스 창업</span></div>
+    <nav class="nav-links">
+      <a href="#about">교과목 소개</a>
+      <a href="#learn">학습 성과</a>
+      <a href="#curriculum">커리큘럼</a>
+      <a href="#info">수강 정보</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <nav class="pages" aria-label="교과목 전환">
+        <a href="index.html" aria-current="page">서비스 창업</a>
+        <a href="marketing.html">바이브 마케팅</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="밝은 테마로 전환" title="테마 전환">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/>
+        </svg>
+      </button>
+      <a class="btn btn-primary" href="#apply">수강 신청</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">● 2026학년도 개설 교과목</span>
+      <h1>아이디어를 한 학기 만에<br><span class="grad">작동하는 서비스</span>로.</h1>
+      <p class="lede">
+        기획서로 끝나는 창업 수업은 이제 그만. 문제 정의부터 프로토타입, 사용자 검증까지
+        AI 페어 코딩으로 직접 만들어 보는 <b>디지털 서비스 창업</b> 교과목입니다.
+        코딩 경험이 없어도 괜찮습니다.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#apply">수강 신청하기 →</a>
+        <a class="btn btn-ghost" href="#curriculum">커리큘럼 보기</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>15주</b>정규 학기</div>
+        <div><b>3학점</b>전공/교양 선택</div>
+        <div><b>4~5인</b>팀 프로젝트</div>
+        <div><b>1개</b>배포된 서비스</div>
+      </div>
+    </div>
+
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i></div>
+      <div class="term-body">
+        <div><span class="p">▸</span> <span class="c">우리 팀 아이디어를 랜딩 페이지로 만들어줘</span></div>
+        <div class="dim">  기획 문서를 읽는 중...</div>
+        <div class="dim">  화면 구조를 설계하는 중...</div>
+        <div><span class="k">  ✓</span> index.html 생성</div>
+        <div><span class="k">  ✓</span> 모바일 레이아웃 적용</div>
+        <div><span class="k">  ✓</span> 배포 완료 → <span class="c">our-service.app</span></div>
+        <div style="margin-top:10px"><span class="p">▸</span> <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">About</span>
+      <h2>왜 이 수업인가</h2>
+      <p>창업 교육의 병목은 아이디어가 아니라 <b>구현</b>이었습니다. AI 코딩 도구가 그 병목을 없앴습니다.</p>
+    </div>
+    <div class="probs rv">
+      <div class="prob before">
+        <h4>기존 창업 수업</h4>
+        <ul>
+          <li>15주 내내 시장조사와 사업계획서만 작성</li>
+          <li>개발자가 팀에 없으면 아이디어에서 멈춤</li>
+          <li>사용자에게 한 번도 보여주지 못한 채 종강</li>
+          <li>PPT 발표로 끝나는 최종 산출물</li>
+        </ul>
+      </div>
+      <div class="prob after">
+        <h4>이 수업</h4>
+        <ul>
+          <li>3주차부터 화면이 나오고, 5주차에 배포된다</li>
+          <li>비전공자도 AI와 페어로 직접 만든다</li>
+          <li>실제 사용자에게 테스트하고 지표를 본다</li>
+          <li>URL이 있는 서비스와 데이터가 남는다</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section id="learn">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Outcomes</span>
+      <h2>수업이 끝나면 할 수 있는 것</h2>
+      <p>기획 언어와 개발 언어를 모두 쓸 수 있는 사람이 됩니다.</p>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card">
+        <div class="ico">◎</div>
+        <h3>문제를 뾰족하게 정의한다</h3>
+        <p>고객 인터뷰와 JTBD 프레임으로 "누가, 언제, 왜 불편한가"를 한 문장으로 정리합니다.</p>
+      </div>
+      <div class="card">
+        <div class="ico">◱</div>
+        <h3>서비스를 직접 설계한다</h3>
+        <p>유저 플로우, 화면 정의서, 데이터 모델까지 개발자와 같은 언어로 문서를 씁니다.</p>
+      </div>
+      <div class="card">
+        <div class="ico">⌘</div>
+        <h3>AI와 페어로 코딩한다</h3>
+        <p>Claude Code·Cursor로 프롬프트를 설계하고, 생성된 코드를 읽고 고치고 배포합니다.</p>
+      </div>
+      <div class="card">
+        <div class="ico">◔</div>
+        <h3>가설을 데이터로 검증한다</h3>
+        <p>랜딩 테스트, A/B 실험, 퍼널 분석으로 "쓸 만한가"를 숫자로 확인합니다.</p>
+      </div>
+      <div class="card">
+        <div class="ico">◈</div>
+        <h3>비즈니스 모델을 만든다</h3>
+        <p>단위 경제성, 가격 설계, 시장 규모 추정까지 투자자가 묻는 질문에 답합니다.</p>
+      </div>
+      <div class="card">
+        <div class="ico">▲</div>
+        <h3>설득력 있게 발표한다</h3>
+        <p>데모데이에서 데모와 지표로 말하는 5분 피치를 완성합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Curriculum</span>
+      <h2>15주 커리큘럼</h2>
+      <p>발견 → 설계 → 구현 → 검증. 매 단계 끝에 손에 잡히는 산출물이 남습니다.</p>
+    </div>
+    <div class="weeks rv">
+      <div class="phase">Phase 1 · 문제 발견 (1–4주)</div>
+      <div class="week"><div class="no">01</div><div><h4>오리엔테이션 &amp; 팀 빌딩</h4><p>디지털 서비스 창업의 지형도, 팀 구성과 역할 정의</p></div></div>
+      <div class="week"><div class="no">02</div><div><h4>문제 발견과 고객 정의</h4><p>페인 포인트 리서치, 페르소나, 고객 인터뷰 설계</p></div></div>
+      <div class="week"><div class="no">03</div><div><h4>시장과 경쟁 분석</h4><p>TAM·SAM·SOM 추정, 대체재 매핑, 포지셔닝</p></div></div>
+      <div class="week"><div class="no">04</div><div><h4>가치 제안 설계</h4><p>Value Proposition Canvas, 핵심 가설 3개 도출</p></div></div>
+
+      <div class="phase">Phase 2 · 서비스 설계 (5–7주)</div>
+      <div class="week"><div class="no">05</div><div><h4>유저 플로우와 정보 구조</h4><p>핵심 여정 정의, 화면 목록과 IA 설계</p></div></div>
+      <div class="week"><div class="no">06</div><div><h4>UI 프로토타이핑</h4><p>Figma 와이어프레임, 디자인 시스템 기초</p></div></div>
+      <div class="week"><div class="no">07</div><div><h4>PRD 작성 실습</h4><p>AI가 읽고 구현할 수 있는 요구사항 문서 쓰기</p></div></div>
+
+      <div class="phase">Phase 3 · 바이브 코딩 (8–11주)</div>
+      <div class="week"><div class="no">08</div><div><h4>AI 페어 코딩 입문</h4><p>Claude Code 워크플로, 프롬프트 설계와 컨텍스트 관리</p></div></div>
+      <div class="week"><div class="no">09</div><div><h4>프론트엔드 구현</h4><p>랜딩 페이지와 핵심 화면 구현, 반응형 대응</p></div></div>
+      <div class="week"><div class="no">10</div><div><h4>데이터와 백엔드 연결</h4><p>Supabase 인증·DB, API 연동, 관리자 화면</p></div></div>
+      <div class="week"><div class="no">11</div><div><h4>배포와 운영</h4><p>Vercel 배포, 도메인 연결, 오류 추적과 애널리틱스</p></div></div>
+
+      <div class="phase">Phase 4 · 검증과 피칭 (12–15주)</div>
+      <div class="week"><div class="no">12</div><div><h4>사용자 테스트</h4><p>실사용자 모집, 과업 기반 유저빌리티 테스트</p></div></div>
+      <div class="week"><div class="no">13</div><div><h4>지표 설계와 그로스</h4><p>노스스타 지표, 퍼널 분석, 획득 채널 실험</p></div></div>
+      <div class="week"><div class="no">14</div><div><h4>비즈니스 모델과 IR</h4><p>수익 구조, 단위 경제성, 투자 유치 자료 구성</p></div></div>
+      <div class="week"><div class="no">15</div><div><h4>데모데이 · 최종 발표</h4><p>외부 심사위원 대상 5분 데모 피치와 Q&amp;A</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Tools</span>
+      <h2>수업에서 쓰는 도구</h2>
+      <p>모두 무료 또는 학생 플랜으로 사용 가능하며, 설치와 세팅은 수업 중에 함께 진행합니다.</p>
+    </div>
+    <div class="stack rv">
+      <span class="chip">Claude Code</span>
+      <span class="chip">Cursor</span>
+      <span class="chip">Figma</span>
+      <span class="chip">Notion</span>
+      <span class="chip">GitHub</span>
+      <span class="chip">Supabase</span>
+      <span class="chip">Vercel</span>
+      <span class="chip">Google Analytics</span>
+      <span class="chip">Typeform</span>
+      <span class="chip">Slack</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Audience</span>
+      <h2>이런 학생에게 권합니다</h2>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card">
+        <div class="ico">✱</div>
+        <h3>만들어 보고 싶은 비전공자</h3>
+        <p>아이디어는 있는데 개발자를 못 구해 멈춰 있던 경영·인문·디자인 전공 학생.</p>
+      </div>
+      <div class="card">
+        <div class="ico">⚙</div>
+        <h3>기획을 배우고 싶은 공학도</h3>
+        <p>구현은 되는데 "왜 만드는가"에 답하기 어려웠던 컴퓨터·공학 계열 학생.</p>
+      </div>
+      <div class="card">
+        <div class="ico">◆</div>
+        <h3>창업을 준비 중인 팀</h3>
+        <p>창업동아리·예비창업패키지 준비 중으로, 한 학기 안에 MVP가 필요한 팀.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Information</span>
+      <h2>수강 정보</h2>
+      <p>아래 항목은 학사 일정 확정 후 최종 공지됩니다.</p>
+    </div>
+    <div class="info rv">
+      <div><dt>교과목명</dt><dd>디지털 서비스 창업</dd></div>
+      <div><dt>담당 교수</dt><dd><mark>○○○ 교수</mark></dd></div>
+      <div><dt>학점 / 시수</dt><dd>3학점 / 주 3시간</dd></div>
+      <div><dt>강의 시간</dt><dd><mark>요일·교시 확정 예정</mark></dd></div>
+      <div><dt>강의실</dt><dd><mark>강의실 미정</mark></dd></div>
+      <div><dt>수강 정원</dt><dd>30명 (팀당 4~5인)</dd></div>
+      <div><dt>선수 지식</dt><dd>없음 · 노트북 지참 필수</dd></div>
+      <div><dt>평가 방식</dt><dd>팀 프로젝트 50% · 주차 과제 30% · 참여 20%</dd></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">FAQ</span>
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary>코딩을 전혀 못 하는데 따라갈 수 있나요?</summary>
+        <p>네. 이 수업은 문법을 외우는 수업이 아니라, AI에게 정확히 요구하고 결과를 읽고 고치는 법을 배우는 수업입니다. 실제로 수강생의 절반 이상이 비전공자를 기준으로 설계되어 있습니다.</p>
+      </details>
+      <details>
+        <summary>팀은 어떻게 구성되나요?</summary>
+        <p>1~2주차에 아이디어 피칭 후 관심사와 전공을 섞어 4~5인 팀을 구성합니다. 기획·디자인·구현 역할을 나누되, 모든 팀원이 한 번씩은 직접 코딩합니다.</p>
+      </details>
+      <details>
+        <summary>아이디어가 아직 없어도 되나요?</summary>
+        <p>괜찮습니다. 1~4주차가 문제 발견 과정이며, 아이디어가 있는 학생은 그 아이디어를 검증하고 없는 학생은 함께 찾습니다.</p>
+      </details>
+      <details>
+        <summary>도구 사용료가 드나요?</summary>
+        <p>대부분 무료 티어 또는 학생 인증으로 충분합니다. 유료 구독이 필요한 경우 학과 지원 여부를 별도 안내합니다.</p>
+      </details>
+      <details>
+        <summary>수업에서 만든 서비스는 누구 것인가요?</summary>
+        <p>팀이 소유합니다. 학기 종료 후에도 계속 운영하거나 창업으로 이어가도록 배포·도메인·저장소 인계 절차를 안내합니다.</p>
+      </details>
+      <details>
+        <summary>실제 창업으로 이어질 수 있나요?</summary>
+        <p>데모데이에 교내 창업지원단과 외부 심사위원이 참석하며, 우수 팀은 창업동아리·예비창업패키지 지원 연계를 안내받습니다.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SIBLING -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sibling rv">
+      <div>
+        <h3>만든 서비스를 알릴 차례라면</h3>
+        <p>같은 방식으로 마케팅을 다루는 자매 교과목 <b>바이브 마케팅</b>도 함께 열립니다. 두 과목을 같이 들으면 만들기와 알리기가 한 학기에 이어집니다.</p>
+      </div>
+      <a class="btn btn-ghost" href="marketing.html">바이브 마케팅 보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="apply" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta rv">
+      <h2>이번 학기, 하나는 만들고 끝냅시다</h2>
+      <p>수강 신청 기간 동안 사전 관심 등록을 받습니다. 개설 확정과 강의 일정은 등록하신 분께 먼저 안내드립니다.</p>
+      <div class="cta-btns">
+        <a class="btn btn-primary" href="#">사전 관심 등록</a>
+        <a class="btn btn-ghost" href="mailto:saem@smu.ac.kr">담당 교수에게 문의</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 디지털 서비스 창업 · <mark>학과명</mark></div>
+    <div><a href="marketing.html">바이브 마케팅</a> · <a href="#top">맨 위로 ↑</a></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
